@@ -12,30 +12,57 @@ function NavBar({ user, setUser }) {
 
   return (
     <header className="pt-1">
+      <div>
+      
+          <>
       <nav className="navbar navbar-expand-sm ">
     <div className="container-fluid">
-      <a className="navbar-brand" href="#/"><b>TodoS</b></a>
+      <Link className="navbar-brand" to="/">📚 <b>TodoS</b></Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link " aria-current="page" href="#/">Home</a>
+            
+              {/* <a className="nav-link " aria-current="page" href="/">Home</a>*/}
+             <Link className="nav-link " to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#/">List</a>
+            <Link className="nav-link " to="/">Home</Link>
           </li>
            
         </ul>
-        <form className="d-flex" role="search">
-          <button className="btn btn-outline-primary btn-sm" type="submit">Login</button>
-        </form>
+        <div className="d-flex">
+        {user ? (
+        <>
+         <ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link me-2" href="#/">{user.username}!</a>
+  </li>
+  <li class="nav-item pt-1">
+      <button className="btn btn-outline-danger btn-sm" onClick={handleLogoutClick}>Logout</button>
+      </li>
+      </ul>
+        </>
+        ) : (
+      <>
+
+  <div class="nav-item pt-0">
+  <Link to="/login"><button className="btn btn-outline-info btn-sm " href="login" type="submit">Login</button></Link> 
+  </div>
+      </>
+        )}
+        </div>
+        
       </div>
     </div>
   </nav>
- 
-      {/* <div>
+  </>
+
+   </div>
+    </header>
+          /* <div>
         <Link to="/">Home</Link>
       </div>
       <div>
@@ -47,8 +74,7 @@ function NavBar({ user, setUser }) {
             <Link to="/login">Login</Link>
           </>
         )}
-      </div> */}
-    </header>
+      </div> */
   );
 }
 
