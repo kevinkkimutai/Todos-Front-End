@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login({ setUser }) {
   const [username, setUsername] = useState("");
@@ -26,7 +27,7 @@ function Login({ setUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/login", {
+    fetch("http://localhost:3000/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +62,10 @@ function Login({ setUser }) {
                 <div className="card-3d-wrapper">
                   <div className="card-front">
                     <div className="center-wrap">
-                      <form onSubmit={handleSubmit} className="section text-center">
+                      <form
+                        onSubmit={handleSubmit}
+                        className="section text-center"
+                      >
                         <h4 className="mb-4 pb-3">Log In</h4>
                         <div className="form-group">
                           <input
@@ -83,12 +87,12 @@ function Login({ setUser }) {
                           />
                           <i className=" input-icon bi bi-key-fill"></i>
                         </div>
-                        <button
-						type="submit"
-                          className="btn1 mt-4 btn btn-outline-info"
-                        >
-                          Login
-                        </button>
+                        <Link className="nav-link " to="/home">
+                          <button className="btn1 mt-4 btn btn-outline-info">
+                            Login
+                          </button>
+                        </Link>
+
                         <p className="mb-0 mt-4 text-center">
                           <a href="#/" className="link">
                             Forgot your password?
@@ -100,7 +104,10 @@ function Login({ setUser }) {
 
                   <div className="card-back">
                     <div className="center-wrap">
-                      <form className="section text-center pt-0" onSubmit={handleSubmitSignup}>
+                      <form
+                        className="section text-center pt-0"
+                        onSubmit={handleSubmitSignup}
+                      >
                         <h4 className="mb-3 pb-3">Sign Up</h4>
 
                         <div className="form-group mt-2">
@@ -121,8 +128,8 @@ function Login({ setUser }) {
                             className="form-style"
                             placeholder="Password"
                             value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            autoComplete="current-password"
                           />
                           <i className=" input-icon bi bi-key-fill"></i>
                         </div>
@@ -133,13 +140,15 @@ function Login({ setUser }) {
                             className="form-style"
                             placeholder="Password_confirmation"
                             value={passwordConfirmation}
-                            onChange={(e) => setPasswordConfirmation(e.target.value)}
+                            onChange={(e) =>
+                              setPasswordConfirmation(e.target.value)
+                            }
                             autoComplete="current-password"
                           />
                           <i className=" input-icon bi bi-key-fill"></i>
                         </div>
                         <button
-                        type="submit"
+                          type="submit"
                           className="btn1 mt-4 btn btn-outline-info"
                         >
                           Register

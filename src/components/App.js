@@ -21,25 +21,17 @@ function App() {
     <>
       <NavBar user={user} setUser={setUser} />
       <main>
-        {user ? (
+        
           <Switch>
-            <Route path="/">
-              <Home user={user}/>
-            </Route>
-          </Switch>
-        ) : (
-          <Switch>
-            <Route path="/signup">
-              <SignUp setUser={setUser} />
-            </Route>
-            <Route path="/login">
+          <Route exact path="/">
               <Login setUser={setUser} />
             </Route>
-            <Route path="/">
-              <Home />
+            <Route  path="/home">
+              <Home user={user} setUser={setUser} />
             </Route>
+            
           </Switch>
-        )}
+       
       </main>
     </>
   );
