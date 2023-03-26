@@ -24,7 +24,7 @@ You can setup this repository by following this manual
     ```{shell}
    git clone git@github.com:kevinkkimutai/Todos-Front-End.git
    ```
-3. Ensure the ruby gems are setup in your machine
+3. Ensure the dependencies are setup in your machine
     ```{shell}
    npm install
    ```
