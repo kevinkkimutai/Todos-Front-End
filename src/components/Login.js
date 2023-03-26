@@ -147,12 +147,11 @@ function Login({ setUser }) {
                           />
                           <i className=" input-icon bi bi-key-fill"></i>
                         </div>
-                        <button
-                          type="submit"
-                          className="btn1 mt-4 btn btn-outline-info"
-                        >
-                          Register
-                        </button>
+                        <Link className="nav-link " to="/home">
+                          <button className="btn1 mt-4 btn btn-outline-info">
+                            Register
+                          </button>
+                        </Link>
                       </form>
                     </div>
                   </div>
