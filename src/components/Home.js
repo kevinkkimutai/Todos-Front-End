@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 function Home({ user }) {
-  const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:3000')
-      .then(response => response.json())
-      .then(data => setTodos(data));
-  }, []);
 
   
      return (
