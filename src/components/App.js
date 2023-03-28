@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import SignUp from "./SignUp";
 import Login from "./Login";
 import NavBar from "./NavBar";
 import Home from "./Home";
@@ -19,18 +20,25 @@ function App() {
   return (
     <>
       <NavBar user={user} setUser={setUser} />
+      
       <main>
-        
-          <Switch>
-          <Route exact path="/">
-              <Login setUser={setUser} />
-            </Route>
-            <Route  path="/home">
+        <Switch>
+          <Route path="/signup">
+            <SignUp setUser={setUser} />
+          </Route>
+          <Route path="/login">
+            <Login setUser={setUser} />
+          </Route>
+          {user ? (
+            <Route path="/">
               <Home user={user} setUser={setUser} />
             </Route>
-            
-          </Switch>
-       
+          ) : (
+            <Route path="/">
+              <Login setUser={setUser} />
+            </Route>
+          )}
+        </Switch>
       </main>
     </>
   );

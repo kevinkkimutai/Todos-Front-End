@@ -17,7 +17,7 @@ function NavBar({ user, setUser }) {
           <>
       <nav className="navbar navbar-expand-sm ">
     <div className="container-fluid">
-      <Link className="navbar-brand" to="/">📚 <b>TodoS</b></Link>
+      <Link className="navbar-brand" to="/home">📚 <b>TodoS</b></Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -26,21 +26,21 @@ function NavBar({ user, setUser }) {
           <li className="nav-item">
             
               {/* <a className="nav-link " aria-current="page" href="/">Home</a>*/}
-             <Link className="nav-link " to="/">Home</Link>
+             {/* <Link className="nav-link " to="/">Home</Link> */}
           </li>
           <li className="nav-item">
-            <Link className="nav-link " to="/">Home</Link>
+            {/* <Link className="nav-link " to="/">Home</Link> */}
           </li>
            
         </ul>
         <div className="d-flex">
         {user ? (
         <>
-         <ul class="nav nav-pills nav-fill">
-  <li class="nav-item">
-    <a class="nav-link me-2" href="#/">{user.username}!</a>
+         <ul className="nav nav-pills nav-fill">
+  <li className="nav-item">
+    <a className="nav-link me-2" href="#/">{user.username}!</a>
   </li>
-  <li class="nav-item pt-1">
+  <li className="nav-item pt-1">
       <button className="btn btn-outline-danger btn-sm" onClick={handleLogoutClick}>Logout</button>
       </li>
       </ul>
@@ -48,7 +48,7 @@ function NavBar({ user, setUser }) {
         ) : (
       <>
 
-  <div class="nav-item pt-0">
+  <div className="nav-item pt-0">
   <Link to="/login"><button className="btn btn-outline-info btn-sm " href="login" type="submit">Login</button></Link> 
   </div>
       </>
@@ -62,7 +62,7 @@ function NavBar({ user, setUser }) {
 
    </div>
     </header>
-    
+  
   );
 }
 
